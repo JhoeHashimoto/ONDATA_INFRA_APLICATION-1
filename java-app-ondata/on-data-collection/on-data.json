@@ -1,0 +1,411 @@
+{
+  "name": "on-data",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "pacientes",
+      "items": [
+        {
+          "type": "http",
+          "name": "create",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/pacientes",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"cpf\": \"12345678902\",\n  \"nome\": \"João Silva\",\n  \"email\": \"joao.silva@example.com\",\n  \"telefone\": \"(11) 98765-4321\",\n  \"endereco\": \"Rua ABC, 123\",\n  \"fumante\": true\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete",
+          "seq": 4,
+          "request": {
+            "url": "{{base_url}}/pacientes/1",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "getAll",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/pacientes",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "getById",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/pacientes/2",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "update",
+          "seq": 5,
+          "request": {
+            "url": "{{base_url}}/pacientes/1",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\r\n  \"cpf\": \"12345678901\",\r\n  \"nome\": \"Carlos Henrique\",\r\n  \"email\": \"joao.silva@example.com\",\r\n  \"telefone\": \"(11) 98765-4321\",\r\n  \"endereco\": \"Rua ABC, 123\",\r\n  \"fumante\": true\r\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "doencas",
+      "items": [
+        {
+          "type": "http",
+          "name": "getAll",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/doencas",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "create",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/doencas",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "  {\n    \"nomeDoenca\": \"Dente Quebrado\"\n  }",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "getById",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/doencas/1",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete",
+          "seq": 4,
+          "request": {
+            "url": "{{base_url}}/doencas/21",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "update",
+          "seq": 5,
+          "request": {
+            "url": "{{base_url}}/doencas/2",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "  {\n    \"nomeDoenca\": \"Dente Quebrado\"\n  }",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "ocorrencias",
+      "items": [
+        {
+          "type": "http",
+          "name": "getAll",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/ocorrencias",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "getById",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/ocorrencias/13",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "create",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/ocorrencias",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"data\": \"2024-10-07\",\n  \"valor\": 499,\n  \"duracao\": 14,\n  \"aprovado\": true,\n  \"idPaciente\": 1,\n  \"idDoenca\": 1\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete",
+          "seq": 4,
+          "request": {
+            "url": "{{base_url}}/ocorrencias/18",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "update",
+          "seq": 5,
+          "request": {
+            "url": "{{base_url}}/ocorrencias/1",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"data\": \"2024-10-07\",\n  \"valor\": 499,\n  \"duracao\": 14,\n  \"aprovado\": true,\n  \"idPaciente\": 1,\n  \"idDoenca\": 1\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "activeEnvironmentUid": "R5MNXTgipuuUOt4TEHvOB",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "base_url",
+          "value": "http://localhost:8080/api/v1",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "base"
+    },
+    {
+      "variables": [
+        {
+          "name": "base_url",
+          "value": "http://localhost:5146/",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "dotnet"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "on-data",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
