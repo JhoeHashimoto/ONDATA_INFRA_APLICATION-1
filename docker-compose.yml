@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+
+  java-app:
+    build:
+      context: ./java-app-ondata
+      dockerfile: Dockerfile
+    container_name: java-app-ondata
+    working_dir: /app
+    volumes:
+      - ./java-app-ondata:/app
+    networks:
+      - app-network
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  react-native-app:
+    build:
+      context: ./react-native-app-ondata
+      dockerfile: Dockerfile
+    container_name: react-native-app-ondata
+    working_dir: /app
+    volumes:
+      - ./react-native-app-ondata:/app
+    networks:
+      - app-network
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
+
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: appdb
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppassword
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local
